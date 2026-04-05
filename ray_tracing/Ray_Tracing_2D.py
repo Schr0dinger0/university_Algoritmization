@@ -22,7 +22,7 @@ class BVHNode:
         )
 
     def _compute_node_aabb(self, walls):
-        """Приватный метод: вычисляет AABB только для этого узла"""
+        """Вычисляет AABB только для этого узла"""
         min_x = min(min(wall[0][0], wall[1][0]) for wall in walls)
         max_x = max(max(wall[0][0], wall[1][0]) for wall in walls)
         min_y = min(min(wall[0][1], wall[1][1]) for wall in walls)
@@ -30,7 +30,7 @@ class BVHNode:
         return (min_x, min_y, max_x, max_y)
 
     def _compute_wall_normal(self, wall):
-        """Приватный метод: вычисляет нормаль конкретной стены"""
+        """Вычисляет нормаль конкретной стены"""
         (x1, y1), (x2, y2) = wall
         dx, dy = x2 - x1, y2 - y1
         length = math.hypot(dx, dy)
